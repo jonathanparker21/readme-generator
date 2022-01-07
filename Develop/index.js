@@ -8,7 +8,7 @@ const path = require('path')
 const questions = [
     {
         type: 'input',
-        name: 'github-username',
+        name: 'github_username',
         message: 'Please enter your GitHub username.'
     },
     {
@@ -33,22 +33,22 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'installation-instructions',
+        name: 'installation_instructions',
         message: 'Please enter installation instructions for your app.'
     },
     {
         type: 'input',
-        name: 'usage-information',
+        name: 'usage_information',
         message: 'Please enter usage information for your app.'
     },
     {
         type: 'input',
-        name: 'contribution-guidelines',
+        name: 'contribution_guidelines',
         message: 'Please enter contribution guidelines for your app.'
     },
     {
         type: 'input',
-        name: 'test-instructions',
+        name: 'test_instructions',
         message: 'Please enter test instructions for your app.'
     }
 ];
