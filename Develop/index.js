@@ -8,7 +8,7 @@ const path = require('path')
 const questions = [
     {
         type: 'input',
-        name: 'github_username',
+        name: 'github',
         message: 'Please enter your GitHub username.'
     },
     {
@@ -54,19 +54,24 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(fileName, response) {
 
-    fs.writeFile('README.md', generateMarkdown(response), (err) =>
-            err ? console.error(err) : console.log('Generating README!')
-        );
+    // fs.writeFile('README.md', generateMarkdown(response), (err) =>
+    //         err ? console.error(err) : console.log('Generating README!')
+    //     );
+
+    return fs.writeFileSync(path.join(process.cwd(), fileName), response);
 
 }
 
 // TODO: Create a function to initialize app
 function init() {
 
-    inquirer.prompt(questions);
-    writeToFile();
+    inquirer.prompt(questions).then((responseInquirer) => { 
+        console.log('Writing the README!')
+        writeToFile('readme.md', generateMarkdown({...responseInquirer}));
+
+     });
 
 }
 

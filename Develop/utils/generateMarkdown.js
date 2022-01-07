@@ -3,7 +3,7 @@
 function renderLicenseBadge(license) {
 
  if (license !== 'None') {
-  return licenseImg = `(https://img.shields.io/badge/license-${license}-blue.svg)`;
+  return `![License](https://img.shields.io/badge/license-${license}-blue.svg)`;
  }
 
  if (license == 'None') {
@@ -17,13 +17,13 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
 
   if (license == 'ISC') {
-    return `Project license under [ISC](https://opensource.org/licenses/ISC)`;
+    return `Project licensed under [ISC](https://opensource.org/licenses/ISC)`;
   } else if (license == 'MIT') {
-    return `Project license under [MIT](https://opensource.org/licenses/MIT)`;
+    return `Project licensed under [MIT](https://opensource.org/licenses/MIT)`;
   } else if (license == 'Mozilla') {
-    return `Project license under [Mozilla](https://www.mozilla.org/en-US/MPL/2.0/)`;
+    return `Project licensed under [Mozilla](https://www.mozilla.org/en-US/MPL/2.0/)`;
   } else if (license == 'Apache') {
-    return `Project license under [Apache](https://opensource.org/licenses/Apache-2.0)`;
+    return `Project licensed under [Apache](https://opensource.org/licenses/Apache-2.0)`;
   }
 
   if (license == 'None') {
@@ -43,51 +43,51 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(response) {
   
-  renderLicenseBadge(response.license);
   renderLicenseLink(response.license);
+  renderLicenseSection(response.license);
 
-  return `# ${data.title} ${licenseImg}
+  return `# ${response.title} ${renderLicenseBadge(response.license)}
 
   ## Table of Contents
 
-  - [Developer Information](#Developer Information)
+  - [Developer](#Developer)
   - [Description](#Description)
-  - [Installation Instructions](#Installation Instructions)
-  - [Usage Information](#Usage Information)
-  - [Contribution Guidelines](#Contribution Guidelines)
-  - [Test Instructions](#Test Instructions)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Contribution](#Contribution)
+  - [Test](#Test)
   - [License](#License)
 
-  ## Developer Information
+  ## Developer
 
-  ${data.github_username} </br>
-  ${data.email}
+  ${response.github} </br>
+  ${response.email}
 
   ## Description
+  
+  ${response.description}
 
-  ${data.description}
+  ## Installation
 
-  ## Installation Instructions
+  ${response.installation_instructions}
 
-  ${data.installation_instructions}
+  ## Usage
 
-  ## Usage Information
+  ${response.usage_information}
 
-  ${data.usage_information}
+  ## Contribution
 
-  ## Contribution Guidelines
+  ${response.contribution_guidelines}
 
-  ${data.contribution_guidelines}
+  ## Test
 
-  ## Test Instructions
-
-  ${data.test_instructions}
+  ${response.test_instructions}
 
   ## License
 
-  ${data.license}
+  ${response.license}
 
 `;
 }
