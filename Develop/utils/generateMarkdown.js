@@ -14,7 +14,23 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+
+  if (license == 'ISC') {
+    return `Project license under [ISC](https://opensource.org/licenses/ISC)`;
+  } else if (license == 'MIT') {
+    return `Project license under [MIT](https://opensource.org/licenses/MIT)`;
+  } else if (license == 'Mozilla') {
+    return `Project license under [Mozilla](https://www.mozilla.org/en-US/MPL/2.0/)`;
+  } else if (license == 'Apache') {
+    return `Project license under [Apache](https://opensource.org/licenses/Apache-2.0)`;
+  }
+
+  if (license == 'None') {
+    return '';
+  }
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
