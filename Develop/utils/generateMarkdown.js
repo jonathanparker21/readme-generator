@@ -2,9 +2,13 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
 
-  // add license badge at top
+ if (license !== 'None') {
+  return licenseImg = `(https://img.shields.io/badge/license-${license}-blue.svg)`;
+ }
 
-
+ if (license == 'None') {
+  return '';
+ }
 
 }
 
