@@ -66,6 +66,7 @@ function writeToFile(fileName, data) {
 function init() {
 
     inquirer.prompt(questions);
+    writeToFile();
 
 }
 
