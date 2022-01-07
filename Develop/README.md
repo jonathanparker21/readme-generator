@@ -1,4 +1,4 @@
-# dfg ![License](https://img.shields.io/badge/license-Mozilla-blue.svg)
+# dfg ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
   ## Table of Contents
 
@@ -37,5 +37,5 @@
 
   ## License
 
-  Mozilla
+  MIT
 

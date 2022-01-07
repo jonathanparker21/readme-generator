@@ -55,12 +55,10 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, response) {
-
-    // fs.writeFile('README.md', generateMarkdown(response), (err) =>
-    //         err ? console.error(err) : console.log('Generating README!')
-    //     );
-
-    return fs.writeFileSync(path.join(process.cwd(), fileName), response);
+    
+    // writing file using process.cwd (returns name of current working directory)
+    fs.writeFileSync(path.join(process.cwd(), fileName), response), (err) =>
+            err ? console.error(err) : console.log('Generating README!');
 
 }
 
