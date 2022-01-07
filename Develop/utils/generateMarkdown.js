@@ -22,7 +22,17 @@ function generateMarkdown(data) {
   renderLicenseBadge(response.license);
   renderLicenseLink(response.license);
 
-  return `# ${data.title}
+  return `# ${data.title} ${licenseImg}
+
+  ## Table of Contents
+
+  - [Developer Information](#Developer Information)
+  - [Description](#Description)
+  - [Installation Instructions](#Installation Instructions)
+  - [Usage Information](#Usage Information)
+  - [Contribution Guidelines](#Contribution Guidelines)
+  - [Test Instructions](#Test Instructions)
+  - [License](#License)
 
   ## Developer Information
 
@@ -48,6 +58,10 @@ function generateMarkdown(data) {
   ## Test Instructions
 
   ${data.test_instructions}
+
+  ## License
+
+  ${data.license}
 
 `;
 }
